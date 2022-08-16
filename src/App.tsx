@@ -9,10 +9,10 @@ function App() {
 
   const status = winner ? 'Winner is: ' + winner : xIsNext ? 'Next Player: ' + playerNames[0] : 'Next Player: ' + playerNames[1]
 
-  const canShowBoard: boolean = playerNames.every((name) => name != null)
+  const showBoard: boolean = playerNames.every((name) => name != null)
   return (
     <div>
-      {!canShowBoard ? <Start /> : <div className='flex flex-row m-5'>
+      {!showBoard ? <Start /> : <div className='flex flex-row m-5'>
         <Board />
         <div className='text-xl text-red-700 ml-5'>
           {status}
